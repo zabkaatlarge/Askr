@@ -7,6 +7,13 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+      <% try{ 
+        if(session.username != null){
+        %>
       <p>Session = <%= session.username%></p>
+      <%}
+            }catch(err){ %>
+      <p>User not logged in</p>
+      <%} %>
   </body>
 </html>

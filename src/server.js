@@ -12,7 +12,7 @@ app = express();
 http.createServer(app).listen(3000);
 
 // set up a static file directory to use for default routing
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,20 +34,17 @@ app.get("/sessionCheck",function(req,res){
 // for user login
 app.get("/login", function (req, res) {
 
-    var result = login.validate(req,res);
-    if(result){
-        // response if user is authenticated
-        req.session.username="admin";
-        res.send("successfully logged in");
-    }
-    else{
-        // response if user is not authenticated 
-        res.append("error","Authentication Failed");
-        res.sendFile(__dirname+"/client/index.html");
-    }
+    login.validate(req,res);
+    res.end();
     
 });
 
+app.get("/logout",function (req,res){
+    req.session.destroy();
+    res.render('index.ejs',{
+        title: 'Successfully Logout'
+    });
+});
 app.get("/goodbye", function (req, res) {
 res.send("Goodbye World!");
 });
