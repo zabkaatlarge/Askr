@@ -1,14 +1,19 @@
 var express = require('express');
+var http = require("http");
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var login = require('./routes/login');
+var logout = require('./routes/logout');
+var test= require ('./routes/test');
 var app = express();
+
+http.createServer(app).listen(3000);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,10 +26,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+// set up express session to create session when user successfully login
+app.use(session({secret: '123456'}));
 app.use('/', routes);
 app.use('/users', users);
-
+app.use('/login',login);
+app.use('/logout',logout);
+app.use('/test',test);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
