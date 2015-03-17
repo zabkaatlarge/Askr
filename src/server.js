@@ -1,5 +1,6 @@
 var express = require("express"),
     http = require("http"),
+    path = require('path'),
     session = require("express-session"),
     login = require("./server/login"),
     app;
@@ -11,11 +12,24 @@ app = express();
 http.createServer(app).listen(3000);
 
 // set up a static file directory to use for default routing
-app.use(express.static(__dirname+"/client"));
+app.use(express.static(__dirname+"/public"));
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // set up express session to create session when user successfully login
 app.use(session({secret: '123456'}));
 
+
+app.get("/sessionCheck",function(req,res){
+    
+    res.render('index.ejs',{
+       layout: false,
+        title: 'testSession',
+        session : req.session
+    });
+});
 // set up our routes
 // for user login
 app.get("/login", function (req, res) {
