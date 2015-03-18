@@ -76,6 +76,16 @@ module.exports={
     getAllQuestions : function(){
             var result = database.question;
             return result;
+    },
+    
+    getAllComments : function(){
+            var result = database.comment;
+            return result;
+},
+    getAllOpinions : function(){
+            var result = database.opinion;
+            return result;
     }
 };
+module.exports.database=database;
 

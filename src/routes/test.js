@@ -19,6 +19,14 @@ router.get('/getUser',function(req,res,next){
     
 });
 
+router.get('/addUser',function(req,res,next){
+    
+    userModel.addUser("xyzkds","abcd@sdf.cm","finally","hello","world",["1","2"]);
+    console.log(database.database.user);
+    res.end("check console");
+    
+});
+
 router.get('/getQuestionsByUser',function(req,res,next){
     
     var questions = userModel.getQuestionsByUser("user_id1");

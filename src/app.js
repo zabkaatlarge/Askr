@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 var test= require ('./routes/test');
+database = require('./database/database');
 var app = express(); 
 
 http.createServer(app).listen(3000);
