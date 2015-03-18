@@ -67,16 +67,8 @@ var database ={
 };
 module.exports={
    
-    getAllUser : function (){
-            
-            var result=database.user;
-       
-            return result;
-    },
-    getAllQuestions : function(){
-            var result = database.question;
-            return result;
-    },
+    
+  
     
     getAllComments : function(){
             var result = database.comment;
