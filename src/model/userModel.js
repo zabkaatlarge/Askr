@@ -38,20 +38,7 @@ module.exports={
                         return questions;        
     },
     
-    saveUser : function(user_id,email,password,fname,lname,questions){
-                        
-                        
-                            var user= {
-                            "user_id": user_id,
-                            "email": email,
-                            "password": password,
-                            "fname": fname,
-                            "lname": lname,
-                            "questions": questions
-                        }
-                        database.database.user.push(user);
-                        
-    },
+    
     
     saveOrUpdateUser : function(user_id,email,password,fname,lname,questions){
                         var user= {
@@ -61,7 +48,7 @@ module.exports={
                             "fname": fname,
                             "lname": lname,
                             "questions": questions
-                        }
+                        };
                         console.log(user_id);
                         if(user_id===0 || user_id===""){
                             user_id= Date.now();

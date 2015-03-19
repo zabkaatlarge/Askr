@@ -27,6 +27,7 @@ var database ={
     "question":[
         {
             "question_id": "que_id1",
+            "statement": "Where we shoud go this sunday? ",
             "votes": 1 ,
             "views": 5,
             "comments": [
@@ -37,6 +38,7 @@ var database ={
         },
          {
             "question_id": "que_id2",
+             "statement": "How can i complete my project before time?",
             "votes": 1 ,
             "views": 4,
             "comments": [
@@ -49,7 +51,7 @@ var database ={
     "comment":[
         {
             "comment_id": "comment_id1",
-            "comment": "Where we should go this sunday?",
+            "comment": "I think we should go to IN N OUT", 
             "auther": "user_id1",
             "opinions": [
                 "opinion_id1"
@@ -70,10 +72,7 @@ module.exports={
     
   
     
-    getAllComments : function(){
-            var result = database.comment;
-            return result;
-},
+  
     getAllOpinions : function(){
             var result = database.opinion;
             return result;
