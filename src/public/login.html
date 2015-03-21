@@ -12,7 +12,7 @@
     <!-- Custom styles for this template -->
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
 
-    <script src="javascripts/SignUpValidator.js"></script>
+    <script src="javascripts/loginValidator.js"></script>
 
     <style>
       .form-control {
@@ -40,10 +40,10 @@
         <div id="navbar" class="navbar-collapse collapse">
           <section class="login_header">
 
-            <form action="login.html" class='navbar-form navbar-right'>
-              <a>Already a member?</a>
-              <button type='submit' class='btn btn-success'>Login</button>
-            </form>"); 
+            <form action="signUp.html" class='navbar-form navbar-right'>
+              <a>Don't have an account?</a>
+              <button type='submit' class='btn btn-success'>Sign Up Here</button>
+            </form> 
 
           </section>         
         </div><!--/.navbar-collapse -->
@@ -62,21 +62,8 @@
 
     <div class="container">
 
-      <h1>Sign Up</h1>
-      <h4>It's free and easy, just fill out the form below</h4>
-      <form name="signUpForm" onSubmit="return validateForm();">
-
-        <div class='form-group'>
-          <input type='text' placeholder='First Name' id="fName" class='form-control'>
-        </div>
-
-        <div class='form-group'>
-          <input type='text' placeholder='Last Name' id="lName" class='form-control'>
-        </div>
-
-        <div class='form-group'>
-          <input type='text' placeholder='Email' id="email" class='form-control'>
-        </div>
+      <h2>Login</h2>
+      <form name="loginForm" onSubmit="return validateLoginForm();">
 
         <div class='form-group'>
           <input type='text' placeholder='Username' id="userName" class='form-control'>
@@ -86,11 +73,10 @@
           <input type='password' placeholder='Password' id="password" class='form-control'>
         </div>
 
-        <button type='submit' name="submit" class='btn btn-success' value="Submit">Sign Up</button>
+        <button type='submit' name="submit" class='btn btn-success' value="Submit">Login</button>
       </form>
 
       <hr>
-
 
       <footer>
         <p>&copy; Askr 2015</p>

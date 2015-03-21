@@ -1,3 +1,9 @@
+/*
+This function is to validate the form located in the signUp.html.
+It's basically to check the input the user typed in the form.
+When user type the wrong input, it pops out an alert message
+containing, what is wrong with the input.
+*/
 function validateForm()  
 {  
 	var firstNm = document.signUpForm.fName;  
@@ -59,7 +65,7 @@ function emailValidation(eMail)
 	}  
 	else  {  
 		alert("Please enter your email correctly");  
-		uemail.focus();  
+		eMail.focus();  
 		return false;  
 	}  
 }
