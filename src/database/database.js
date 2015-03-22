@@ -58,6 +58,7 @@ var database ={
 	    "qid": "que_id1",
             "comment": "I think we should go to IN N OUT", 
             "auther": "user_id1",
+	    "votes" : "2",
             "opinions": [
                 "opinion_id1"
                

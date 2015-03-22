@@ -29,12 +29,13 @@ module.exports={
                         return opinions;        
     },
     
-     saveOrUpdateComment : function(comment_id,qid,comment,auther,opinions){
+     saveOrUpdateComment : function(comment_id,qid,comment,auther,votes,opinions){
                          var comment= {
                                 "comment_id": comment_id,
 				"qid": qid,
                                 "comment": comment, 
                                 "auther": auther,
+				"votes": votes,
                                 "opinions": opinions
                                  
                         };

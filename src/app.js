@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 var comment = require('./routes/comment');
+var vote = require('./routes/vote');
 var listallcomments = require('./routes/listallcomments');
 var submit = require('./routes/submit');
 var listall = require('./routes/listall');
@@ -42,6 +43,7 @@ app.use('/submit',submit);
 app.use('/listall',listall);
 app.use('/listallcomments',listallcomments);
 app.use('/comment',comment);
+app.use('/vote',vote);
 app.use('/question',question);
 app.use('/test',test);
 // catch 404 and forward to error handler
