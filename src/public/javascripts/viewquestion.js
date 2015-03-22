@@ -14,6 +14,7 @@ $(document).ready (function () {
 				$(".col-md-11").append("<h2>[3 Votes] Answer 1: Interstellar</h2><h3>Submitted by: vishal on 03/05/2015</h3><p><a class='btn btn-default' href='vote' role='button'>Vote for this answer &raquo;</a></p>");
 				$(".col-md-11").append("<h2>[1 Votes] Answer 1: Avengers</h2><h3>Submitted by: vishal on 03/05/2015</h3><p><a class='btn btn-default' href='vote' role='button'>Vote for this answer &raquo;</a></p>");
 				$(".col-md-11").append("<h2>[0 Votes] Answer 1: Hot Tub Time Machine 2</h2><h3>Submitted by: brian on 03/04/2015</h3><p><a class='btn btn-default' href='vote' role='button'>Vote for this answer &raquo;</a></p>");
+				$(".col-md-11").append("<form class='navbar-form' action='/comment' method='get'><div class='form-group'><input type='text' placeholder='Enter your comment' class='form-control' name='comment'></div><button type='submit' class='btn btn-success'>Add Comment</button></form>");
 			}
 			//$(".col-md-11").append("<h2>Question: <a href='question/"+data[i].question_id+"'>"+data[i].statement+"</a></h2><h3>Submitted by: "+data[i].submitter+" on "+data[i].date+"</h3><p>"+data[i].votes+" total votes, "+data[i].views+" total views</p><p><a class='btn btn-default' href='question/"+data[i].question_id+"' role='button'>View answers &raquo;</a></p>");	
 		}

@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
         //title: 'Successfull Logged in',
         //session : req.session
     //});
-	res.redirect('../');
+	res.json([{"status":"in"}]);
     }
     else{
         
@@ -27,6 +27,7 @@ router.get('/', function(req, res, next) {
         res.end("Wrong username/ password");
        //  res.append("error","Authentication Failed");
         //res.sendFile(__dirname+"/client/index.html");
+	res.json([{"status":"out"}]);
     }
 });
 

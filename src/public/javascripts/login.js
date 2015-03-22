@@ -5,6 +5,15 @@ function loginStatus() {
 	"use strict";
 	//changes header depending on login status
 	var loggedIn = false;
+
+	var url = "http://localhost:3000/login"
+	$.getJSON(url, function(data) {
+		if (data.status === "in") {
+			loggedIn = true;
+		}
+		
+		});
+	
 	
 	if (loggedIn == true) {
 		$(".login_header").append("<form class='navbar-form navbar-right'><div class='form-group'><input type='text' placeholder='Welcome brian!' class='form-control'></div></form>");
