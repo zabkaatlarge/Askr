@@ -13,9 +13,11 @@ $(document).ready (function () {
 			{
 				$(".question").append("<h1>Question from "+data[i].submitter+":</h1><p>"+data[i].statement+"</p><p>Posted on "+data[i].date);
 				$.getJSON(url2, function(data2) {
+					var counter = 1;
 					for (var q=0; q < data2.length;q++) {
 						if (data2[q].qid === thisId) {
-							$(".col-md-11").append("<h2>Answer "+(q+1)+": "+data2[q].comment+"</h2><h3>Submitted by: "+data2[q].auther+"</h3><p><a class='btn btn-default' href='vote' role='button'>Vote for this answer &raquo;</a></p>");
+							$(".col-md-11").append("<h2>Answer "+counter+": "+data2[q].comment+"</h2><h3>Submitted by: "+data2[q].auther+"</h3><p><a class='btn btn-default' href='vote' role='button'>Vote for this answer &raquo;</a></p>");
+							counter++;
 						}
 					}
 				});
