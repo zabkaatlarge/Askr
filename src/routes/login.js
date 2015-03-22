@@ -13,11 +13,12 @@ router.get('/', function(req, res, next) {
     if(user != null &&  user.password === password)
     {
        req.session.username=username;
-        res.render('index.ejs',{
-       layout: false,
-        title: 'Successfull Logged in',
-        session : req.session
-    });
+        //res.render('index.ejs',{
+       //layout: false,
+        //title: 'Successfull Logged in',
+        //session : req.session
+    //});
+	res.redirect('../');
     }
     else{
         
