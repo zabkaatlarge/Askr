@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 var submit = require('./routes/submit');
+var listall = require('./routes/listall');
 var question = require('./routes/question');
 var test= require ('./routes/test');
 database = require('./database/database');
@@ -36,6 +37,7 @@ app.use('/users', users);
 app.use('/login',login);
 app.use('/logout',logout);
 app.use('/submit',submit);
+app.use('/listall',listall);
 app.use('/question',question);
 app.use('/test',test);
 // catch 404 and forward to error handler

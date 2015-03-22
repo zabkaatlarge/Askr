@@ -3,7 +3,8 @@
 $(document).ready (function () {
 	"use strict";
 	//sample data
-	var url = "http://localhost:3000/question/que_id1";
+	//var url = "http://localhost:3000/question/que_id1";
+	var url = "http://localhost:3000/listall"
 	$.getJSON(url, function(data) {
 		$(".col-md-11").append("<h2>"+data.statement+"test</h2>");
 		});
