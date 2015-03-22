@@ -36,7 +36,7 @@ app.use('/users', users);
 app.use('/login',login);
 app.use('/logout',logout);
 app.use('/submit',submit);
-app.use('/question/:id',question);
+app.use('/question',question);
 app.use('/test',test);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
