@@ -55,6 +55,7 @@ var database ={
     "comment":[
         {
             "comment_id": "comment_id1",
+	    "qid": "que_id1",
             "comment": "I think we should go to IN N OUT", 
             "auther": "user_id1",
             "opinions": [

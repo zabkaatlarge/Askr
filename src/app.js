@@ -10,6 +10,8 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
+var comment = require('./routes/comment');
+var listallcomments = require('./routes/listallcomments');
 var submit = require('./routes/submit');
 var listall = require('./routes/listall');
 var question = require('./routes/question');
@@ -38,6 +40,8 @@ app.use('/login',login);
 app.use('/logout',logout);
 app.use('/submit',submit);
 app.use('/listall',listall);
+app.use('/listallcomments',listallcomments);
+app.use('/comment',comment);
 app.use('/question',question);
 app.use('/test',test);
 // catch 404 and forward to error handler

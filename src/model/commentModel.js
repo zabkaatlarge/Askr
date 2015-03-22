@@ -29,9 +29,10 @@ module.exports={
                         return opinions;        
     },
     
-     saveOrUpdateComment : function(comment_id,comment,auther,opinions){
+     saveOrUpdateComment : function(comment_id,qid,comment,auther,opinions){
                          var comment= {
                                 "comment_id": comment_id,
+				"qid": qid,
                                 "comment": comment, 
                                 "auther": auther,
                                 "opinions": opinions

@@ -18,15 +18,17 @@ router.get('/', function(req, res, next) {
         //title: 'Successfull Logged in',
         //session : req.session
     //});
+	console.log("The session says: "+req.session);
 	res.json([{"status":"in"}]);
     }
     else{
         
         console.log(user);
         //console.log("password="+user.password);
-        res.end("Wrong username/ password");
+        //res.end("Wrong username/ password");
        //  res.append("error","Authentication Failed");
         //res.sendFile(__dirname+"/client/index.html");
+	console.log("The session says: "+req.session);
 	res.json([{"status":"out"}]);
     }
 });
