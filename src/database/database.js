@@ -30,6 +30,8 @@ var database ={
             "statement": "Where we shoud go this sunday? ",
             "votes": 1 ,
             "views": 5,
+            "submitter": "vishal",
+            "date": "03/20/2015",
             "comments": [
                 "comment_id1"
                 
@@ -41,6 +43,8 @@ var database ={
              "statement": "How can i complete my project before time?",
             "votes": 1 ,
             "views": 4,
+            "submitter": "brian",
+            "date": "03/21/2015",
             "comments": [
                 "comment_id1"
                 
