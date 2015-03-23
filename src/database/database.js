@@ -54,7 +54,7 @@ var database ={
     ],
     "comment":[
         {
-            "comment_id": "comment_id1",
+            "comment_id": 12345,
 	    "qid": "que_id1",
             "comment": "I think we should go to IN N OUT", 
             "auther": "user_id1",
