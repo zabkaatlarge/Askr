@@ -5,8 +5,8 @@ var questionModel = require('../model/questionModel');
 router.get('/', function(req, res, next) {
    var question_id = 0;
     var statement = req.query.statement;
-var submitter = "brian";
-var date = "01/01/2015";
+	var submitter = "brian";
+	var date = "01/01/2015";
     var votes = 0;
     var views = 0;
     var comments = "";
