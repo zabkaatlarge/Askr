@@ -1,4 +1,5 @@
 var thisId = getParameterByName('qid');
+var error = getParameterByName('error');
 var logged;
 
 //function to show questions on the homepage
@@ -9,6 +10,8 @@ $(document).ready (function () {
 	var url = "http://localhost:3000/listall";
 	var url2 = "http://localhost:3000/listallcomments";
 	var url3 = "http://localhost:3000/checksession";
+    
+    
 
 	$.getJSON(url3, function(data3) {
 		if (data3[0].status === "in") {
@@ -17,12 +20,15 @@ $(document).ready (function () {
 			logged = 0;
 		};
 	});
-
+    
+    if(error!=""){
+        window.alert(error);
+    }
 	$.getJSON(url, function(data) {
 		for (var i=0; i < data.length;i++) {
 			if (data[i].question_id === thisId)
 			{
-				$(".question").append("<h1>Question from "+data[i].submitter+":</h1><p>"+data[i].statement+"</p><p>Posted on "+data[i].date);
+				$(".question").append("<div class='page-header'><h1>"+data[i].statement+"</h1><p><small>By: "+data[i].submitter+"</small></p><p><small>Posted on: "+data[i].date+"</p></div>");
 				$.getJSON(url2, function(data2) {
 					var counter = 1;
 					for (var q=0; q < data2.length;q++) {
@@ -38,7 +44,7 @@ $(document).ready (function () {
 				if (logged === 1) {
 					$(".col-md-10").append("<form class='navbar-form' action='/comment' method='get'><div class='form-group'><input type='text' placeholder='Enter your comment' class='form-control' name='comment'><input type='hidden' name='qid' value='"+thisId+"'></div><button type='submit' class='btn btn-success'>Add Comment</button></form>");
 				} else {
-					$(".col-md-10").append("<h3>Please login above if you want to comment</h3>");
+					$(".col-md-10").append("<div class='alert alert-warning' role='alert'>Please login above if you want to comment or vote for answer</div>");
 				}
 				}, 500);
 				

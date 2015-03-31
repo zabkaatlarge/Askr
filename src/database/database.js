@@ -27,7 +27,7 @@ var database ={
     "question":[
         {
             "question_id": "que_id1",
-            "statement": "Where we shoud go this sunday? ",
+            "statement": "Where we shoud go this sunday?",
             "votes": 1 ,
             "views": 5,
             "submitter": "vishal",
