@@ -6,8 +6,8 @@ router.get('/', function(req, res, next) {
    var comment_id = 0;
     var comment = req.query.comment;
 	var qid = req.query.qid;
-var auther = "brian";
-var votes = 0;
+	var auther = req.session.username;
+	var votes = 0;
     var opinions = "";
 
     commentModel.saveOrUpdateComment(comment_id,qid,comment,auther,votes, opinions);

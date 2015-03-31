@@ -1,4 +1,5 @@
 var thisId = getParameterByName('qid');
+var logged;
 
 //function to show questions on the homepage
 $(document).ready (function () {
@@ -7,6 +8,16 @@ $(document).ready (function () {
 	//var url = "http://localhost:3000/question/que_id1";
 	var url = "http://localhost:3000/listall";
 	var url2 = "http://localhost:3000/listallcomments";
+	var url3 = "http://localhost:3000/checksession";
+
+	$.getJSON(url3, function(data3) {
+		if (data3[0].status === "in") {
+			logged = 1;
+		} else {
+			logged = 0;
+		};
+	});
+
 	$.getJSON(url, function(data) {
 		for (var i=0; i < data.length;i++) {
 			if (data[i].question_id === thisId)
@@ -23,7 +34,17 @@ $(document).ready (function () {
 					}
 				});
 				
-				$(".col-md-11").append("<form class='navbar-form' action='/comment' method='get'><div class='form-group'><input type='text' placeholder='Enter your comment' class='form-control' name='comment'><input type='hidden' name='qid' value='"+data[i].question_id+"'></div><button type='submit' class='btn btn-success'>Add Comment</button></form>");
+  				setTimeout(function (){
+				if (logged === 1) {
+					$(".col-md-10").append("<form class='navbar-form' action='/comment' method='get'><div class='form-group'><input type='text' placeholder='Enter your comment' class='form-control' name='comment'><input type='hidden' name='qid' value='"+thisId+"'></div><button type='submit' class='btn btn-success'>Add Comment</button></form>");
+				} else {
+					$(".col-md-10").append("<h3>Please login above if you want to comment</h3>");
+				}
+				}, 500);
+				
+
+
+				
 				
 			}
 

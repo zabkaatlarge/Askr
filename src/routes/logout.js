@@ -3,10 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
- req.session.destroy();
-    res.render('index.ejs',{
-        title: 'Successfully Logout'
-    });
+ 	req.session.destroy();
+    res.redirect("/");
 });
 
 module.exports = router;
