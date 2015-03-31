@@ -31,6 +31,7 @@ function usernameValidation(uName){
 	}  
 }
 
+
 //check if the length of the password is between 4 and 18
 function passwordValidation(pass){
 	var passLength = pass.value.length;  

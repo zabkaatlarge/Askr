@@ -19,6 +19,7 @@ $(document).ready (function () {
 							$(".col-md-11").append("<h2>["+data2[q].votes+" Votes] Answer "+counter+": "+data2[q].comment+"</h2><h3>Submitted by: "+data2[q].auther+"</h3><p><a class='btn btn-default' href='vote?comment_id="+data2[q].comment_id+"&comment="+data2[q].comment+"&qid="+data2[q].qid+"&auther="+data2[q].auther+"&votes="+data2[q].votes+"' role='button'>Vote for this answer &raquo;</a></p>");
 							counter++;
 						}
+
 					}
 				});
 				
