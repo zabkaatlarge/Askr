@@ -20,6 +20,12 @@ $(document).ready (function () {
 			logged = 0;
 		};
 	});
+    if(thisId!=null){
+         $.getJSON("http://localhost:3000/addView?qid="+thisId,function(data){
+         
+         });
+    }
+   
     
     if(error!=""){
         window.alert(error);

@@ -39,7 +39,7 @@ router.get('/getQuestionsByUser',function(req,res,next){
 
 router.get('/getQuestion',function(req,res,next){
     
-    var comments = questionModel.getCommentsByQuestionId("que_id1");
+    var comments = questionModel.getQuestionById("que_id1");
     console.log(comments);
     res.end("check console");
     

@@ -19,6 +19,7 @@ var signup = require('./routes/signup');
 var listall = require('./routes/listall');
 var question = require('./routes/question');
 var test= require ('./routes/test');
+var addview = require('./routes/addView');
 database = require('./database/database');
 var app = express(); 
 
@@ -50,6 +51,7 @@ app.use('/comment',comment);
 app.use('/vote',vote);
 app.use('/question',question);
 app.use('/test',test);
+app.use('/addView',addview);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
