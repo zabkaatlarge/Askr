@@ -42,7 +42,7 @@ $(document).ready (function () {
 				
   				setTimeout(function (){
 				if (logged === 1) {
-					$(".col-md-10").append("<form class='navbar-form' action='/comment' method='get'><div class='form-group'><input type='text' placeholder='Enter your comment' class='form-control' name='comment'><input type='hidden' name='qid' value='"+thisId+"'></div><button type='submit' class='btn btn-success'>Add Comment</button></form>");
+					$(".col-md-10").append("<form class='navbar-form' action='/comment' method='get'><div class='form-group'><textarea placeholder='Enter your comment' class='form-control' name='comment' maxlength='50' style='width:485px'  rows='3'></textarea><input type='hidden' name='qid' value='"+thisId+"'></div><div class='form-group'><button type='submit' class='btn btn-success'>Add Comment</button></div></form>");
 				} else {
 					$(".col-md-10").append("<div class='alert alert-warning' role='alert'>Please login above if you want to comment or vote for answer</div>");
 				}
