@@ -5,7 +5,9 @@ var userModel = require('../model/userModel');
 router.get('/', function(req, res, next) {
    var username = req.query.username;
     var password = req.query.password;
-
+var button = req.query.button;
+    if(button==="signin")
+    {
     var user = userModel.getUserByEmail(username);
     
    // console.log (username);
@@ -33,6 +35,10 @@ router.get('/', function(req, res, next) {
 	
 	//res.json([{"status":"out"}]);
       res.redirect("/");
+    }
+}
+    else{
+        res.redirect("/signUp.html");
     }
 });
 

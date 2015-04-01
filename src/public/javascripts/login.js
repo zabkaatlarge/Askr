@@ -8,9 +8,10 @@ function loginStatus() {
 	var url = "http://localhost:3000/checksession";
 	$.getJSON(url, function(data) {
 		if (data[0].status === "in") {
-			$(".login_header").append("<form class='navbar-form navbar-right'><div class='form-group'><input type='text' placeholder='Welcome "+data[0].username+"!' class='form-control'></div> - <a href='/logout'>Logout</a></form>");
+            
+			$(".login_header").html("<form class='navbar-form navbar-right'><div class='form-group'><input type='text' placeholder='Welcome "+data[0].username+"!' class='form-control'></div> - <a href='/logout'>Logout</a></form>");
 		} else {
-			$(".login_header").append("<form class='navbar-form navbar-right' action='/login' method='get'><div class='form-group'><input type='text' placeholder='username' class='form-control' name='username'></div><div class='form-group'><input type='password' placeholder='password' class='form-control' name='password'></div><button type='submit' class='btn btn-success'>Sign in</button></form>");
+			//$(".login_header").append("");
 		}
 		
 		
