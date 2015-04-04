@@ -4,17 +4,38 @@ It's basically to check the input the user typed in the form.
 When user type the wrong input, it pops out an alert message
 containing, what is wrong with the input.
 */
+var clicked;
+
 function validateLoginForm(){
-	var uName = document.loginForm.userName;
-	var pass = document.loginForm.password;
 
-	if(usernameValidation(uName)){
-		if(passwordValidation(pass)){}
-	}
+	if(clicked === 'signIn'){
 
-	return false;
+		var eMail = document.loginForm.email;
+		var pass = document.loginForm.password;
+
+		if(emailValidation(eMail)){
+			if(passwordValidation(pass)){}
+		}
+
+		return false;
+	}	
 }
 
+//check if email has the correct format
+function emailValidation(eMail)
+{
+	var format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(eMail.value.match(format))  {  
+		return true;  
+	}  
+	else  {  
+		alert("Please enter your email correctly");  
+		eMail.focus();  
+		return false;  
+	}  
+}
+
+//*****no longer used****
 //check if the username has correct format, it can only have alphabet and numbers
 //the length is suppose to be between 6 and 16
 function usernameValidation(uName){
