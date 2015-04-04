@@ -1,11 +1,13 @@
 /*
-This function is to validate the form located in the signUp.html.
+This function is to validate the form located in the sginUp.html.
 It's basically to check the input the user typed in the form.
 When user type the wrong input, it pops out an alert message
 containing, what is wrong with the input.
 */
 function validateForm()  
 {  
+
+	var uName = document.loginForm.userName;     //no longer used
 	var firstNm = document.signUpForm.fName;  
 	var lastNm = document.signUpForm.lName;
 	var eMail = document.signUpForm.email;
@@ -16,9 +18,7 @@ function validateForm()
 	if(fNameValidation(firstNm)) {  
   		if(lNameValidation(lastNm)) { 
   			if(emailValidation(eMail)) {
-				if(usernameValidation(uName)){
-					if(passwordValidation(pass)){}
-				}
+				if(passwordValidation(pass)){}
   			} 
 		} 
 	} 
@@ -70,6 +70,7 @@ function emailValidation(eMail)
 	}  
 }
 
+//*no longer used*
 //check if the username has correct format, it can only have alphabet and numbers
 //the length is suppose to be between 6 and 16
 function usernameValidation(uName){
