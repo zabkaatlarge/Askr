@@ -6,8 +6,7 @@ containing, what is wrong with the input.
 */
 function validateForm()  
 {  
-
-	var uName = document.loginForm.userName;     //no longer used
+	//var uName = document.loginForm.userName;     //no longer used
 	var firstNm = document.signUpForm.fName;  
 	var lastNm = document.signUpForm.lName;
 	var eMail = document.signUpForm.email;
@@ -70,7 +69,7 @@ function emailValidation(eMail)
 	}  
 }
 
-//*no longer used*
+/**no longer used*
 //check if the username has correct format, it can only have alphabet and numbers
 //the length is suppose to be between 6 and 16
 function usernameValidation(uName){
@@ -86,6 +85,7 @@ function usernameValidation(uName){
 		return false;  
 	}  
 }
+*/
 
 //check if the length of the password is between 4 and 18
 function passwordValidation(pass){
