@@ -24,7 +24,7 @@ module.exports={
                         };
 
                         if(opinion_id===0 || opinion_id===""){
-                            opinion_id= Date.now();
+                            opinion_id= "opid"+Date.now();
                             opinion.opinion_id=opinion_id;
                             database.database.opinion.push(opinion);
                            
@@ -37,8 +37,10 @@ module.exports={
                                 }
                             }
                         }
-                           
-                        console.log(database.database.opinion);
+        
+                         return opinion;  
+                       
+                     
                         
     }
     

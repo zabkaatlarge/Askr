@@ -20,12 +20,14 @@ module.exports={
     getOpinionsByCommentId : function (id){
                                var comment = this.getCommentByCommentId(id)[0];
                                var opinions=[];
+                                co
                                for(var i =0; i<comment.opinions.length ; i++){ 
                                var opinion = opinionModel.getAllOpinions().filter(function(item){
                                     return item.opinion_id=== comment.opinions[i];
                                    });
                                opinions.push(opinion[0]);
-                                 }                                                      
+                                 }    
+                      
                         return opinions;        
     },
     
@@ -41,8 +43,9 @@ module.exports={
                         };
 
                         if(comment_id===0 || comment_id===""){
-                            comment_id= Date.now();
+                            comment_id= "comid"+Date.now();
                             comment.comment_id=comment_id;
+                            comment.opinions=[];
                             database.database.comment.push(comment);
                            
                         }else{
@@ -55,7 +58,7 @@ module.exports={
                             }
                         }
                            
-                        console.log(database.database.comment);
+                     
                         
     }
     

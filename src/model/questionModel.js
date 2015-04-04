@@ -1,12 +1,12 @@
 var express = require('express');
 var commentModel = require('./commentModel');
-var qId = 1000;
 //http://stackoverflow.com/questions/11836050/searching-for-items-in-a-json-array-using-node-preferably-without-iteration
 module.exports={
   
    getAllQuestions : function (){
             
                     var result=database.database.question;
+                   
                     return result;
     },
      getQuestionById : function (id){
@@ -42,8 +42,8 @@ module.exports={
                         };
 
                         if(question_id===0 || question_id===""){
-                            question_id= "qid"+qId;
-				qId++;
+                            question_id= "qid"+Date.now();
+				
                             question.question_id=question_id;
                             database.database.question.push(question);
                            
@@ -57,7 +57,7 @@ module.exports={
                             }
                         }
                            
-                        console.log(database.database.question);
+                        
                         
     }
     

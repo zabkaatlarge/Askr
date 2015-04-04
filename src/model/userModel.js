@@ -49,12 +49,12 @@ module.exports={
                             "lname": lname,
                             "questions": questions
                         };
-                        console.log(user_id);
+                        
                         if(user_id===0 || user_id===""){
-                            user_id= Date.now();
+                            user_id= "usid"+Date.now();
                             user.user_id=user_id;
                             database.database.user.push(user);
-                            console.log("in if");
+                           
                         }else{
                               
                             for(var i=0; i<database.database.user.length ; i++){
@@ -65,7 +65,7 @@ module.exports={
                             }
                         }
                            
-                        console.log(database.database.user);
+                       
                         
     }
 };

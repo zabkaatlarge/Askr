@@ -70,4 +70,12 @@ router.get('/saveOpinion',function(req,res,next){
     res.end("check console");
 });
 
+router.get('/getDatabase',function(req,res,next){
+  console.log(userModel.getAllUser());
+    console.log(questionModel.getAllQuestions());
+    console.log(commentModel.getAllComments());
+    console.log(opinionModel.getAllOpinions());
+    res.end("check console");
+});
+
 module.exports = router;

@@ -39,7 +39,7 @@ $(document).ready (function () {
 					var counter = 1;
 					for (var q=0; q < data2.length;q++) {
 						if (data2[q].qid === thisId) {
-							$(".col-md-11").append("<h2>["+data2[q].votes+" Votes] Answer "+counter+": "+data2[q].comment+"</h2><h3>Submitted by: "+data2[q].auther+"</h3><p><a class='btn btn-default' href='vote?comment_id="+data2[q].comment_id+"&comment="+data2[q].comment+"&qid="+data2[q].qid+"&auther="+data2[q].auther+"&votes="+data2[q].votes+"' role='button'>Vote for this answer &raquo;</a></p>");
+							$(".col-md-11").append("<h2>["+data2[q].votes+" Votes] Answer "+counter+": "+data2[q].comment+"</h2><h3>Submitted by: "+data2[q].auther+"</h3><p><a class='btn btn-default' href='vote?comment_id="+data2[q].comment_id+"&comment="+data2[q].comment+"&qid="+data2[q].qid+"&auther="+data2[q].auther+"&votes="+data2[q].votes+"&opinion=like"+"' role='button'>Like &raquo;</a><a class='btn btn-default' href='vote?comment_id="+data2[q].comment_id+"&comment="+data2[q].comment+"&qid="+data2[q].qid+"&auther="+data2[q].auther+"&votes="+data2[q].votes+"&opinion=dislike"+"' role='button'>Dis Like &raquo;</a></p>");
 							counter++;
 						}
 

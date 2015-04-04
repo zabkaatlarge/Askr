@@ -5,11 +5,11 @@ var questionModel = require('../model/questionModel');
 router.get('/', function(req, res, next) {
    var question_id = 0;
     var statement = req.query.statement;
-	var submitter = req.session.username;
+	var submitter = req.session.user_id;
 	var date = "01/01/2015";
     var votes = 0;
     var views = 0;
-    var comments = "";
+    var comments = [];
 
     //date code borrowed from http://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i
     var today = new Date();

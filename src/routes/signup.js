@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
     var password = req.query.password;
     var fname = req.query.fname;
     var lname = req.query.lname;
-    var questions = "";
+    var questions = [];
 
     userModel.saveOrUpdateUser(user_id,email,password,fname,lname,questions);
     req.session.username = email;
