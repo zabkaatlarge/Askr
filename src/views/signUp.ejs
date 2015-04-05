@@ -35,17 +35,17 @@
         <div id="navbar" class="navbar-collapse collapse">
     <section class="login_header">
           <!--/login header gets populated here -->
-        <% if(session.username != null){   %>
+         <% if(session.username != null){   %>
             <form class='navbar-form navbar-right'>
                 <div class='form-group'>
                     <input type='text' placeholder='Welcome <%=session.username%>!' class='form-control'>
                 </div> - 
                 <a href='/logout'>Logout</a></form>
             <% }else{%>
-		<form class='navbar-form navbar-right' action='/login' method='get'>
-            <div class='form-group'><input type='text' placeholder='Email' class='form-control' name='username'></div>
+		<form class='navbar-form navbar-right' action='/login' name='loginForm' onSubmit='return validateLoginForm();' method='get'>
+            <div class='form-group'><input type='text' placeholder='Email' class='form-control' name='email'></div>
             <div class='form-group'><input type='password' placeholder='password' class='form-control' name='password'></div>
-            <button type='submit' name='button' value='signin' class='btn btn-success'>Sign in</button>
+            <button type='submit' name='button' value='signin' onClick="clicked='signIn'" class='btn btn-success'>Sign in</button>
             <button type='submit' name='button' value='signup' class='btn btn-success'>Sign up</button>
         </form><%}%>
       </section>
@@ -101,5 +101,6 @@
  
  
   <script src="javascripts/SignUpValidator.js"></script>
+      <script src="../javascripts/loginValidator.js"></script>
   </body>
 </html>

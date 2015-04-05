@@ -37,22 +37,6 @@ function emailValidation(eMail)
 	}  
 }
 
-//*****no longer used****
-//check if the username has correct format, it can only have alphabet and numbers
-//the length is suppose to be between 6 and 16
-function usernameValidation(uName){
-	var format = /^[A-Za-z1-9]+$/;
-	var uNameLength = uName.value.length;
-	
-	if(uName.value.match(format) && uNameLength >= 6 && uNameLength <=16) {  
-		return true;  
-	}  
-	else {  
-		alert('Please enter your username, it can only have alphabet and numbers. And the length should be between 6 and 16');  
-		uName.focus();  
-		return false;  
-	}  
-}
 
 
 //check if the length of the password is between 4 and 18
