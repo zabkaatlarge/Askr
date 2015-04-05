@@ -29,6 +29,7 @@ $(document).ready (function () {
 			if (data[i].question_id === thisId)
 			{
 				$(".question").append("<div class='page-header'><h1>"+data[i].statement+"</h1><p><small>By: "+data[i].submitter+"</small></p><p><small>Posted on: "+data[i].date+"</p></div>");
+               
                 
                 
 				$.getJSON(url2, function(data2) {
