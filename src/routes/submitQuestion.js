@@ -2,7 +2,15 @@ var express = require('express');
 var router = express.Router();
 var questionModel = require('../model/questionModel');
 /* GET home page. */
-router.get('/', function(req, res, next) {
+
+router.get('/',function(req,res,next){
+     res.render('submitquestion.ejs',{
+        session : req.session,
+        
+       
+    });
+});
+router.get('/new', function(req, res, next) {
    var question_id = 0;
     var statement = req.query.statement;
 	var submitter = req.session.user_id;

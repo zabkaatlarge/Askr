@@ -37,7 +37,7 @@ var button = req.query.button;
     }
 }
     else{
-        res.redirect("/signUp.html");
+        res.redirect("/signUp");
     }
 });
 

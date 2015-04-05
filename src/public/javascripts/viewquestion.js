@@ -1,6 +1,6 @@
 var thisId = getParameterByName('qid');
 var error = getParameterByName('error');
-var logged;
+
 
 //function to show questions on the homepage
 $(document).ready (function () {
@@ -9,17 +9,11 @@ $(document).ready (function () {
 	//var url = "http://localhost:3000/question/que_id1";
 	var url = "http://localhost:3000/listall";
 	var url2 = "http://localhost:3000/listallcomments";
-	var url3 = "http://localhost:3000/checksession";
+	
     
 
 
-	$.getJSON(url3, function(data3) {
-		if (data3[0].status === "in") {
-			logged = 1;
-		} else {
-			logged = 0;
-		};
-	});
+	
     if(thisId!=null){
          $.getJSON("http://localhost:3000/addView?qid="+thisId,function(data){
          

@@ -7,14 +7,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 var comment = require('./routes/comment');
-var checksession = require('./routes/checksession');
 var vote = require('./routes/vote');
 var listallcomments = require('./routes/listallcomments');
-var submit = require('./routes/submit');
+var submitQuestion = require('./routes/submitQuestion');
 var signup = require('./routes/signup');
 var listall = require('./routes/listall');
 var question = require('./routes/question');
@@ -40,12 +38,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // set up express session to create session when user successfully login
 app.use(session({secret: '123456'}));
 app.use('/', routes);
-app.use('/users', users);
 app.use('/login',login);
 app.use('/logout',logout);
-app.use('/submit',submit);
+app.use('/submitQuestion',submitQuestion);
 app.use('/signup',signup);
-app.use('/checksession',checksession);
+
 app.use('/listall',listall);
 app.use('/listallcomments',listallcomments);
 app.use('/comment',comment);
@@ -65,6 +62,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
+/*
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
@@ -74,7 +72,7 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
+*/
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {

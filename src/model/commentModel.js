@@ -18,10 +18,10 @@ module.exports={
                             return result;
     },
     getOpinionsByCommentId : function (id){
-                                console.log(id);
+                               
                                var comment = this.getCommentByCommentId(id)[0];
                                var opinions=[];
-                                console.log(this.getAllComments());
+                                
                                for(var i =0; i<comment.opinions.length ; i++){ 
                                var opinion = opinionModel.getAllOpinions().filter(function(item){
                                     return item.opinion_id=== comment.opinions[i];
