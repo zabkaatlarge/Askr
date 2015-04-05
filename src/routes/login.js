@@ -13,7 +13,7 @@ var button = req.query.button;
   
     if(user != null &&  user.password === password)
     {
-       req.session.username=username;
+       req.session.username=user.fname;
         req.session.user_id=user.user_id;
         //res.render('index.ejs',{
        //layout: false,

@@ -9,7 +9,8 @@ router.get('/checkSession', function(req, res, next) {
  res.render('index.ejs',{
        layout: false,
         title: 'testSession',
-        session : req.session
+        session : req.session,
+        path: __dirname
     });
 });
 

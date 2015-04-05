@@ -4,7 +4,7 @@ var commentModel = require('../model/commentModel');
 var opinionModel = require('../model/opinionModel');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-   var comment_id = parseInt(req.query.comment_id);
+   var comment_id = req.query.comment_id;
     var comment = commentModel.getCommentByCommentId(comment_id);
 	var qid = req.query.qid;
 var auther = req.session.user_id;
@@ -16,7 +16,7 @@ var auther = req.session.user_id;
     
 if(auther===undefined){
     error = "Need to login for adding vote.";
-    res.redirect("/viewquestion.html?qid="+qid+"&error="+error);
+    res.redirect("/viewquestion?qid="+qid+"&error="+error);
 }
     else{
         
@@ -58,7 +58,7 @@ if(auther===undefined){
             { //new opinion is like
                 
                 if(existedOpinion[0].status==="like"){
-                    //Same opinion second time
+                    error = "You can only give only 1 opinion for each comment";
                   
                 }
                 else{
@@ -84,7 +84,7 @@ if(auther===undefined){
                
                 if(existedOpinion[0].status==="dislike"){
                     //Same opinion second time
-                    
+                     error = "You can only give only 1 opinion for each comment"
                 }
                 else{
                     //Opinion changed like to dislike
@@ -107,7 +107,7 @@ if(auther===undefined){
          
         }
        
-          res.redirect("/viewquestion.html?qid="+qid);
+          res.redirect("/viewquestion?qid="+qid+"&error="+error);
     }
 	
 

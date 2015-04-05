@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-   
+    <link rel="icon" href="../../favicon.ico">
 
     <title>Askr - Ask a question, discover an answer...</title>
 
     <!-- Custom styles for this template -->
-    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
 	
+
   </head>
 
   <body>
@@ -26,17 +27,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><image src="images/askr_logo.jpg" height=30></a>
+          <a class="navbar-brand" href="../"><image src="../images/askr_logo.jpg" height=30></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse login_header">
+		 <% if(session.username != null){   %>
+            <form class='navbar-form navbar-right'>
+                <div class='form-group'>
+                    <input type='text' placeholder='Welcome <%=session.username%>!' class='form-control'>
+                </div> - 
+                <a href='/logout'>Logout</a></form>
+            <% }else{%>
 		<form class='navbar-form navbar-right' action='/login' method='get'>
             <div class='form-group'><input type='text' placeholder='Email' class='form-control' name='username'></div>
             <div class='form-group'><input type='password' placeholder='password' class='form-control' name='password'></div>
             <button type='submit' name='button' value='signin' class='btn btn-success'>Sign in</button>
             <button type='submit' name='button' value='signup' class='btn btn-success'>Sign up</button>
-        </form>
-          <!--/login header gets populated here -->
-		  
+        </form><%}%>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -44,12 +50,9 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Welcome to Askr!</h1>
-        <p>Askr streamlines group decision making! Login to Askr to post questions, and collaborate with your friends on the best answers to those questions. Where should you go to dinner? What movie should you see? Askr can help!</p>
-        <p>
-        <a class="btn btn-primary btn-lg" href="submitquestion.html" role="button">Post a question &raquo;</a>
-        
-        </p>
+		<section class="question">
+		<!--/question gets populated here -->
+		</section>
       </div>
     </div>
 
@@ -57,6 +60,14 @@
       <!-- Example row of columns -->
       <div class="row">
 	  
+        <div class="col-md-10">
+            <% if(session.username !=null){%>
+            <form class='navbar-form' action='/comment' method='get'><div class='form-group'><textarea placeholder='Enter your comment' class='form-control' name='comment' maxlength='50' style='width:485px'  rows='3'></textarea><input type='hidden' name='qid' value='<%=qid%>'></div><div class='form-group'><button type='submit' class='btn btn-success'>Add Comment</button></div></form>
+            <%} else { %>
+            <div class='alert alert-warning' role='alert'>Please login above if you want to comment or vote for answer</div>
+            <% } %>
+          <!--/body questions get populated here -->
+        </div>
         <div class="col-md-11">
           <!--/body questions get populated here -->
         </div>
@@ -75,7 +86,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="javascripts/homepage.js"></script>
-	<script src="javascripts/login.js"></script>
+    
+	<script src="../javascripts/viewquestion.js"></script>
+	<!--<script src="../javascripts/login.js"></script>-->
   </body>
 </html>

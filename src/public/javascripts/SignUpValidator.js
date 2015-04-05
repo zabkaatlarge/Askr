@@ -17,7 +17,9 @@ function validateForm()
 	if(fNameValidation(firstNm)) {  
   		if(lNameValidation(lastNm)) { 
   			if(emailValidation(eMail)) {
-				if(passwordValidation(pass)){}
+				if(passwordValidation(pass)){
+                return true;
+                }
   			} 
 		} 
 	} 

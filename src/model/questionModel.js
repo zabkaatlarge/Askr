@@ -10,11 +10,11 @@ module.exports={
                     return result;
     },
      getQuestionById : function (id){
-            
+                                
                             var result=this.getAllQuestions().filter(function(item){
                             return item.question_id===id;
                             });
-        
+                              
                             return result;
     },
     getCommentsByQuestionId :  function (id){

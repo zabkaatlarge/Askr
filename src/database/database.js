@@ -32,7 +32,12 @@ var database ={
     views: 6,
     comments: [] } ],
 
- "comment":[ ],
+ "comment":[{ comment_id: 'comid1428195321892',
+    qid: 'qid1428135619644',
+    comment: 'Lets go to In and Out',
+    auther: 'usid1428135258774',
+    votes: 0,
+    opinions: [] } ],
      "opinion":[]
     /*
     "question":[

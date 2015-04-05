@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
     //declare an array and store the json data
     var list = deepCopy(commentModel.getAllComments());
 
-   console.log(list);
+   
 for(i=0;i<list.length; i++){
       
        list[i].auther=userModel.getUserById(list[i].auther)[0].fname;

@@ -12,6 +12,7 @@ module.exports={
     getUserById : function (id){
             
                             var result=this.getAllUser().filter(function(item){
+                               
                             return item.user_id===id;
                             });
         

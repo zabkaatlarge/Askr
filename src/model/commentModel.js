@@ -14,13 +14,14 @@ module.exports={
                             var result=this.getAllComments().filter(function(item){
                             return item.comment_id===id;
                             });
-        
+                            
                             return result;
     },
     getOpinionsByCommentId : function (id){
+                                console.log(id);
                                var comment = this.getCommentByCommentId(id)[0];
                                var opinions=[];
-                                co
+                                console.log(this.getAllComments());
                                for(var i =0; i<comment.opinions.length ; i++){ 
                                var opinion = opinionModel.getAllOpinions().filter(function(item){
                                     return item.opinion_id=== comment.opinions[i];

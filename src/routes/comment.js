@@ -9,12 +9,11 @@ router.get('/', function(req, res, next) {
 	var auther = req.session.user_id;
 	var votes = 0;
     var opinions = [];
-
+   
     commentModel.saveOrUpdateComment(comment_id,qid,comment,auther,votes, opinions);
 
-	
-
-    res.redirect("/viewquestion.html?qid="+qid);
+	var url = "/viewquestion?qid="+qid;
+    res.redirect(url);
 
 });
 

@@ -9,8 +9,9 @@ router.get('/', function(req, res, next) {
  var qid=req.query.qid;
    
     var question = questionModel.getQuestionById(qid)[0];
+   
 question.views++;
-    questionModel.saveOrUpdateQuestion(question);
+   // questionModel.saveOrUpdateQuestion(question);
    
 
     //respond with the array

@@ -3,8 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index.ejs',{
+    var qid = req.query.qid;
+    
+    res.render('viewquestion.ejs',{
         session : req.session,
+        qid : qid
        
     });
  // res.render('index', { title: 'Express' });

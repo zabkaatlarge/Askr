@@ -14,7 +14,9 @@ function validateLoginForm(){
 		var pass = document.loginForm.password;
 
 		if(emailValidation(eMail)){
-			if(passwordValidation(pass)){}
+			if(passwordValidation(pass)){
+            return true;
+            }
 		}
 
 		return false;
