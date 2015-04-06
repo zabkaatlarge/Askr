@@ -14,9 +14,7 @@ $(document).ready(function() {
 
         });
     }
-    if (error != "") {
-        window.alert(error);
-    }
+   
     $.getJSON(url, function(data) {
         for (var i = 0; i < data.length; i++) {
             if (data[i].question_id === thisId) {
@@ -38,7 +36,9 @@ $(document).ready(function() {
     });
 
 });
-
+ if (error != "") {
+        window.alert(error);
+    }
 //code referenced from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
