@@ -16,12 +16,18 @@ router.post('/new', function(req, res, next) {
     var fname = req.body.fName;
     var lname = req.body.lName;
     var questions = [];
-
+var user = userModel.getUserByEmail(email);
+    if(user!=null){
+        var error = "Account already exist";
+     res.redirect("/signUp?error="+error);
+    }
+    else{
     var user = userModel.saveOrUpdateUser(user_id, email, password, fname, lname, questions);
-console.log(user);
+
     req.session.username = user.fname;
     req.session.user_id = user.user_id;
     res.redirect("/");
+    }
 
 });
 

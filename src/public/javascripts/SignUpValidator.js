@@ -1,3 +1,5 @@
+var error = getParameterByName('error');
+
 function validateForm() {
     //var uName = document.loginForm.userName;     //no longer used
     var firstNm = document.signUpForm.fName;
@@ -67,4 +69,15 @@ function passwordValidation(pass) {
         return false;
     }
     return true;
+}
+
+if (error != "") {
+        window.alert(error);
+    }
+//code referenced from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
