@@ -4,11 +4,9 @@ var questionModel = require('../model/questionModel');
 
 /* GET home page. */
 router.get('/:id', function(req, res, next) {
-   var this_id = req.params.id;
-   
-    res.json(questionModel.getQuestionById(this_id)[0]);
+    var this_id = req.params.id;
 
-    //res.redirect("../question/" + this_id);
+    res.json(questionModel.getQuestionById(this_id)[0]);
 
 });
 

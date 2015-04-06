@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var userModel = require('../model/userModel');
 /* GET home page. */
-router.get('/',function(req,res,next){
-    
-     res.render('signUp.ejs',{
-        session : req.session,
-       
+router.get('/', function(req, res, next) {
+
+    res.render('signUp.ejs', {
+        session: req.session,
+
     });
 });
 router.get('/new', function(req, res, next) {
@@ -17,8 +17,8 @@ router.get('/new', function(req, res, next) {
     var lname = req.query.lName;
     var questions = [];
 
-  var user=  userModel.saveOrUpdateUser(user_id,email,password,fname,lname,questions);
-   
+    var user = userModel.saveOrUpdateUser(user_id, email, password, fname, lname, questions);
+
     req.session.username = user.fname;
     req.session.user_id = user.user_id;
     res.redirect("/");

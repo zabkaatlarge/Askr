@@ -1,88 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-   
+
 
     <title>Askr - Ask a question, discover an answer...</title>
 
-    <!-- Custom styles for this template -->
+   
     <link href="../stylesheets/bootstrap.css" rel="stylesheet">
-	
-  </head>
 
-  <body>
+</head>
+
+<body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="../"><image src="../images/askr_logo.jpg" height=30></a>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../">
+                    <image src="../images/askr_logo.jpg" height=30>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse login_header">
+                <% if(session.username !=null){ %>
+                    <form class='navbar-form navbar-right'>
+                        <div class='form-group'>
+                            <input type='text' placeholder='Welcome <%=session.username%>!' class='form-control'>
+                        </div> -
+                        <a href='/logout'>Logout</a></form>
+                    <% }else{%>
+                        <form class='navbar-form navbar-right' action='/login' name='loginForm' onSubmit='return validateLoginForm();' method='get'>
+                            <div class='form-group'>
+                                <input type='text' placeholder='Email' class='form-control' name='email'>
+                            </div>
+                            <div class='form-group'>
+                                <input type='password' placeholder='password' class='form-control' name='password'>
+                            </div>
+                            <button type='submit' name='button' value='signin' onClick="clicked='signIn'" class='btn btn-success'>Sign in</button>
+                            <button type='submit' name='button' value='signup' class='btn btn-success'>Sign up</button>
+                        </form>
+                        <%}%>
+                           
+            </div>
+            <!--/.navbar-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse login_header">
-            <% if(session.username != null){   %>
-            <form class='navbar-form navbar-right'>
-                <div class='form-group'>
-                    <input type='text' placeholder='Welcome <%=session.username%>!' class='form-control'>
-                </div> - 
-                <a href='/logout'>Logout</a></form>
-            <% }else{%>
-		<form class='navbar-form navbar-right' action='/login' name='loginForm' onSubmit='return validateLoginForm();' method='get'>
-            <div class='form-group'><input type='text' placeholder='Email' class='form-control' name='email'></div>
-            <div class='form-group'><input type='password' placeholder='password' class='form-control' name='password'></div>
-            <button type='submit' name='button' value='signin' onClick="clicked='signIn'" class='btn btn-success'>Sign in</button>
-            <button type='submit' name='button' value='signup' class='btn btn-success'>Sign up</button>
-        </form><%}%>
-          <!--/login header gets populated here -->
-		  
-        </div><!--/.navbar-collapse -->
-      </div>
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
-        <h1>Welcome to Askr!</h1>
-        <p>Askr streamlines group decision making! Login to Askr to post questions, and collaborate with your friends on the best answers to those questions. Where should you go to dinner? What movie should you see? Askr can help!</p>
-        <p>
-        <a class="btn btn-primary btn-lg" href="/submitQuestion" role="button">Post a question &raquo;</a>
-        
-        </p>
-      </div>
+        <div class="container">
+            <h1>Welcome to Askr!</h1>
+            <p>Askr streamlines group decision making! Login to Askr to post questions, and collaborate with your friends on the best answers to those questions. Where should you go to dinner? What movie should you see? Askr can help!</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/submitQuestion" role="button">Post a question &raquo;</a>
+
+            </p>
+        </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-	  
-        <div class="col-md-11">
-          <!--/body questions get populated here -->
+        <!-- Example row of columns -->
+        <div class="row">
+
+            <div class="col-md-11">
+                <!--/body questions get populated here -->
+            </div>
+
         </div>
-        
-      </div>
 
-      <hr>
+        <hr>
 
-      <footer>
-        <p>&copy; Askr 2015</p>
-      </footer>
-    </div> <!-- /container -->
+        <footer>
+            <p>&copy; Askr 2015</p>
+        </footer>
+    </div>
+    <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="../javascripts/homepage.js"></script>
-	<script src="../javascripts/loginValidator.js"></script>
-  </body>
+    <script src="../javascripts/homepage.js"></script>
+    <script src="../javascripts/loginValidator.js"></script>
+</body>
+
 </html>

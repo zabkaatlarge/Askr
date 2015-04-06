@@ -17,10 +17,10 @@ var signup = require('./routes/signup');
 var listall = require('./routes/listall');
 var question = require('./routes/question');
 var viewQuestion = require('./routes/viewQuestion');
-var test= require ('./routes/test');
+var test = require('./routes/test');
 var addview = require('./routes/addView');
 database = require('./database/database');
-var app = express(); 
+var app = express();
 
 http.createServer(app).listen(3000);
 
@@ -28,34 +28,37 @@ http.createServer(app).listen(3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // set up express session to create session when user successfully login
-app.use(session({secret: '123456'}));
+app.use(session({
+    secret: '123456'
+}));
 app.use('/', routes);
-app.use('/login',login);
-app.use('/logout',logout);
-app.use('/submitQuestion',submitQuestion);
-app.use('/signup',signup);
+app.use('/login', login);
+app.use('/logout', logout);
+app.use('/submitQuestion', submitQuestion);
+app.use('/signup', signup);
 
-app.use('/listall',listall);
-app.use('/listallcomments',listallcomments);
-app.use('/comment',comment);
-app.use('/vote',vote);
-app.use('/question',question);
-app.use('/test',test);
-app.use('/addView',addview);
-app.use('/viewquestion',viewQuestion);
+app.use('/listall', listall);
+app.use('/listallcomments', listallcomments);
+app.use('/comment', comment);
+app.use('/vote', vote);
+app.use('/question', question);
+app.use('/test', test);
+app.use('/addView', addview);
+app.use('/viewquestion', viewQuestion);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -76,11 +79,11 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 
