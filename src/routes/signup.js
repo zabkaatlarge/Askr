@@ -9,16 +9,16 @@ router.get('/', function(req, res, next) {
 
     });
 });
-router.get('/new', function(req, res, next) {
+router.post('/new', function(req, res, next) {
     var user_id = 0;
-    var email = req.query.email;
-    var password = req.query.password;
-    var fname = req.query.fName;
-    var lname = req.query.lName;
+    var email = req.body.email;
+    var password = req.body.password;
+    var fname = req.body.fName;
+    var lname = req.body.lName;
     var questions = [];
 
     var user = userModel.saveOrUpdateUser(user_id, email, password, fname, lname, questions);
-
+console.log(user);
     req.session.username = user.fname;
     req.session.user_id = user.user_id;
     res.redirect("/");

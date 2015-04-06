@@ -1,10 +1,7 @@
-/*
-This function is to validate the form located in the login.html.
-It's basically to check the input the user typed in the form.
-When user type the wrong input, it pops out an alert message
-containing, what is wrong with the input.
-*/
+var error = getParameterByName('loginerror');
 var clicked;
+
+
 
 function validateLoginForm(){
 
@@ -49,4 +46,15 @@ function passwordValidation(pass){
 		return false;  
 	}  
 	return true; 
+}
+if (error != "") {
+        window.alert(error);
+    }
+
+//code referenced from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }

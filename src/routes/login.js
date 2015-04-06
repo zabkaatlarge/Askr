@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var userModel = require('../model/userModel');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    var email = req.query.email;
-    var password = req.query.password;
-    var button = req.query.button;
+router.post('/', function(req, res, next) {
+    var email = req.body.email;
+    var password = req.body.password;
+    var button = req.body.button;
     if (button === "signin") {
         var user = userModel.getUserByEmail(email);
 
@@ -16,8 +16,8 @@ router.get('/', function(req, res, next) {
 
             res.redirect("/");
         } else {
-
-            res.redirect("/");
+            var error="Wrong Email or password";
+            res.redirect("/?loginerror="+error);
         }
     } else {
         res.redirect("/signUp");
