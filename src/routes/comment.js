@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var commentModel = require('../model/commentModel');
+var questionModel = require('../model/questionModel');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var comment_id = 0;
@@ -10,8 +11,10 @@ router.get('/', function(req, res, next) {
     var votes = 0;
     var opinions = [];
 
-    commentModel.saveOrUpdateComment(comment_id, qid, comment, auther, votes, opinions);
-
+   comment = commentModel.saveOrUpdateComment(comment_id, qid, comment, auther, votes, opinions);
+    var question=questionModel.getQuestionById(qid)[0];
+    question.comments.push(comment.comment_id);
+    question.votes = parseInt(question.votes)+1;
     var url = "/viewquestion?qid=" + qid;
     res.redirect(url);
 
